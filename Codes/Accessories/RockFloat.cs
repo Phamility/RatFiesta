@@ -40,7 +40,7 @@ namespace RatFiesta.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.StoneBlock, 75);
             recipe.AddRecipeGroup(mod.Name + ":Evil", 25);
-            //Reference RatFiesta -> Codes -> Other
+            //Reference Rat Fiesta -> Codes -> Other
             recipe.AddIngredient(ItemID.GravitationPotion, 1);
             recipe.SetResult(this);
             recipe.AddRecipe();
