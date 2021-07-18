@@ -1,4 +1,4 @@
-﻿using RatFiesta.Buffs;
+using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
 using Terraria;
@@ -15,6 +15,7 @@ namespace RatFiesta.Items.XConsumables
 {
 	class MThreatStat : ModItem
 	{
+	//Fun fact, I tried to make this a buff, but ModifyBuffTip was so WACK to use, so i made it display in the chat
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Otherworldy Analyzer");
@@ -34,6 +35,7 @@ namespace RatFiesta.Items.XConsumables
 			item.value = Item.buyPrice(0, 0, 0, 0);
 			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.NPCDeath13;
+			//wof noises
 			item.consumable = false;
 
 
@@ -56,12 +58,16 @@ namespace RatFiesta.Items.XConsumables
 				Main.NewTextMultiline("You have yet to interact with the darkness...");
 
 			}
+			//Anytime u consume an idol, it creases the number, if u consumed 0 or 1+, it shows above or below
 
 			if (PlayerStats.Idolsconsumed >= 1)
 			{
 				Main.NewTextMultiline("Darkened benefits:");
 
 			}
+			//I put them in order at which u get them
+			//I made a bunch of things similar to PlayerStats2, not sure how to do it combined so I hard coded it.
+				//Reference Rat Fiesta -> Codes -> Other
 			if (PlayerStats1.Threat1Consumed == true)
 			{
 				Main.NewTextMultiline("The Mysterious Idol from the Eye Of Cthulu permanently increases your max health and max mana by 30!");
@@ -97,7 +103,7 @@ namespace RatFiesta.Items.XConsumables
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(ItemID., 25);
+			//No ingredients
 			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
