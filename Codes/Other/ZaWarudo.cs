@@ -1,4 +1,4 @@
-﻿using RatFiesta.Buffs;
+using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using RatFiesta.Items.XConsumables;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace RatFiesta.Mods
 {
+//To be completely honest with you - all I know is that this helps you add stuff to Boss Checklist and save that you beat a boss before.
     class ZaWarudo : ModWorld
     {
         public static bool DownedSlimeye = false;
