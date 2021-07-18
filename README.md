@@ -20,3 +20,5 @@ I used pixilart.com/draw# so uh lol...I don't use art programs / nor do I know h
 Phamility, @TheAgileIndie
 
 All me babyyyy well ig some snippets of codefrom some random forum posts as well -__- O U R C O D E
+
+P.S If you liked it , tweet at me, cause I'll probably forget abt this and it would make my day :P
