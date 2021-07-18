@@ -1,6 +1,5 @@
-﻿
+
 using RatFiesta.Items.Weapons;
-//using RatFiesta.Items.Drops;
 using RatFiesta.Items.Accessories.Sigils.SigilOfThelands;
 using RatFiesta.Items.Accessories.Sigils.SigilOfTech;
 using RatFiesta.Items.Accessories;
@@ -15,9 +14,12 @@ namespace ExampleMod.Items
 {
 	public class VanillaBagAdds : GlobalItem
 	{
+	//When you open a bag, this is called
 		public override void OpenVanillaBag(string context, Player player, int arg)
 		{
 			if (context == "bossBag")
+			//This makes it so any bag has a 20% for a life crystal, 1/70 for an OStinky, 1/20 for any of the "dev" sets, I put
+				//Devs in quotes cause I just wanted multiple vanity sets despite me being the only contributer.
 			{
 				if(Main.rand.Next(1,6)== 2)
                 {
@@ -58,8 +60,12 @@ namespace ExampleMod.Items
 				}
 			
 			}
-			// This method shows adding items to Fishrons boss bag. 
-			// Typically you'll also want to also add an item to the non-expert boss drops, that code can be found in ExampleGlobalNPC.NPCLoot. Use this and that to add drops to bosses.
+			// This method shows adding items to any boss bag. 
+			//typically you want to add this also in ModGlobalNPC unless it's expert exclusive
+			//Reference Rat Fiesta -> Codes -> Other
+			//U dont want items splurring out of bosses in expert, u want them in the bags, so you add them here
+			//also my typing is getting lazier, i wanna sleep.
+			//also also, typically u want greater chances in boss bags then in normal mode.
 			if (context == "bossBag" && arg == ItemID.SkeletronBossBag)
 			{
 				player.QuickSpawnItem(ModContent.ItemType<Threat2>());
