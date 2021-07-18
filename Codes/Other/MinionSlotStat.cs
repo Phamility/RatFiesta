@@ -1,4 +1,4 @@
-﻿using RatFiesta.Buffs;
+using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
 using Terraria;
@@ -32,11 +32,14 @@ namespace RatFiesta.Items.XConsumables
 			item.useTime = 32;
 			item.useAnimation = 32;
 			item.useStyle = ItemUseStyleID.HoldingUp;
+			//Like a life crystal
 			item.value = Item.buyPrice(0, 0, 0, 0);
 			item.rare = ItemRarityID.Cyan;
 
 			item.UseSound = SoundID.Item29;
+			//Mana crystal sound
 			item.consumable = false;
+			//Makes it so it doesn't go away on use
 			
 
 
@@ -47,21 +50,18 @@ namespace RatFiesta.Items.XConsumables
 		{
 			return true;		
 		}
+		//Not sure if this was necessary
 
 		public override bool UseItem(Player player)
 		{
 			Double X = player.minionDamage;
 			Double Y = player.allDamage - 1;
+			//I made these variables equaling these stats, then later rounded them to 2 decimal places
+			// I -1 in all damage cause the original 100% is already there from minion damage.
 
 			Main.NewTextMultiline("Max minions: " + player.maxMinions + "\nMinion knockback: " + player.minionKB +
 				" / Summon Damage Multiplier: " + (Math.Round(X, 2) + (Math.Round(Y, 2))));
 			
-
-			
-
-
-
-
 
 
 			return true;
@@ -72,7 +72,9 @@ namespace RatFiesta.Items.XConsumables
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddIngredient(ItemID., 25);
-			//recipe.AddTile(TileID.MythrilAnvil);
+			//This is what ud do if you want ingredients, I chose not to have any
+			//recipe.AddTile(TileID.WorkBenches);
+			//This is what ud do if you want any tile requirements, I chose not to have any
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
