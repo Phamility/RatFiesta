@@ -19,7 +19,7 @@ namespace RatFiesta.Buffs
 	{
 		public override void SetDefaults()
 		{
-
+//Just a simple buff that shows it's self when a certain accessory is equipped, doesn't do anything besides show itself .-.
 			DisplayName.SetDefault("True Sight");
 			Description.SetDefault("A large light surrounds you!");
 			Main.buffNoSave[Type] = true;
