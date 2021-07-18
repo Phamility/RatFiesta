@@ -17,7 +17,7 @@ namespace RatFiesta.Mods
 {
     class ExamplePlayer : ModPlayer
     {
-		
+		//This is so that when you CREATE a character, I auto added these set of items.
         public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
 		{
 			Item item = new Item();
