@@ -38,7 +38,7 @@ namespace RatFiesta.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
         //The lowest percentage of health, 10%, is putten first because it is fulfilled by less than 35% and 70%, so if it were to be put at the end,
-        //it would never go through, so always in a case like this, go from smallesrt to largest.
+        //it would never go through, so always in a case like this, go from smallest to largest.
             if (player.statLife <= (player.statLifeMax2 * .1f))
             {
                 player.runAcceleration *= 1.24f;
