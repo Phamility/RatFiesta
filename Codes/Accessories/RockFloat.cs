@@ -23,6 +23,7 @@ namespace RatFiesta.Items.Accessories
             item.value = Item.sellPrice(platinum: 1);
             item.rare = ItemRarityID.Orange;
             item.buffType = ModContent.BuffType<RockBuff>();
+            //Reference Rat Fiesta -> Codes -> Buffs
             item.noMelee = true;
             item.noUseGraphic = true;
             //These two last lines aren't necessary, I just added them when copying and pasting some defaults.
