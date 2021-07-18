@@ -12,9 +12,7 @@ namespace RatFiesta.Modifications
 {
     public class ModGlobalNPC : GlobalNPC
     {
-       
-            
-            
+       //This modifies the shop
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
             if (type == NPCID.Merchant)
@@ -22,22 +20,22 @@ namespace RatFiesta.Modifications
                 
                 shop.item[nextSlot].SetDefaults(ItemID.GoblinBattleStandard);
                 shop.item[nextSlot].shopCustomPrice = 50000;
- //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
+                //Me adding Goblin army summon
             }
             if (type == NPCID.WitchDoctor)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.SummoningPotion);
                 shop.item[nextSlot].shopCustomPrice = 5000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
+                //Me adding summoning potion
             }
-            if (type == NPCID.Wizard && Main.hardMode == true)
+            if (type == NPCID.Wizard && Main.hardMode == true) // realized wizard is post hardmode lol
             {
 
                 shop.item[nextSlot].SetDefaults(ItemID.TruffleWorm);
                 shop.item[nextSlot].shopCustomPrice = 1000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
+        //        Make the wizard sell the truffle, price is 1 platinum btw
                 nextSlot++;
             }
             if (type == NPCID.Clothier)
@@ -45,29 +43,24 @@ namespace RatFiesta.Modifications
 
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VJustinsShades>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VincentsCap>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VPetersBall>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VSenku>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VTempleLED>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<VVInosuke>());
                 shop.item[nextSlot].shopCustomPrice = 5000000;
-                //shop.item[nextSlot].SetDefaults(ModContent.ItemType<CarKey>());
                 nextSlot++;
             }
+            //me adding mod content vanity to the clothier
         }
         public override void NPCLoot(NPC npc)
         {
@@ -76,8 +69,9 @@ namespace RatFiesta.Modifications
                 if (Main.rand.Next(1, 351) == 2)
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MaidenWeapon"), 1, true, -1);
-
+     
                 }
+                //Set up a 1/350 chance to drop from any npc in expert, 1/550 in normal
             }
             else
             {
@@ -86,9 +80,11 @@ namespace RatFiesta.Modifications
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MaidenWeapon"), 1, true, -1);
 
                 }
+                
             }
             if (Main.rand.Next(1, 401) == 2)
             {
+            //Make any enemy 1/400 to drop one of these 6 vanities
                 if(Main.rand.Next(1,7) == 2)
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VincentsCap"), 1, true, -1);
@@ -113,11 +109,13 @@ namespace RatFiesta.Modifications
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VJustinsShades"), 1, true, -1);
                 }
+                //tbh,  idk it this is a balanced 1/7 chance, but w/e
               
             }
 
             if (Main.hardMode == false)
             {
+            //Pre hard mode, enemies have a 1/40 chacne to drop some Bengays
                 if (Main.rand.Next(1, 41) == 2)
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ABenGay"), (Main.rand.Next(3, 7)), true, -1);
@@ -126,10 +124,11 @@ namespace RatFiesta.Modifications
             if (npc.type == NPCID.SkeletronHead)
             {
                
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+   
+                
                 if (Main.expertMode) { }
+                //YOU WILL SEE THIS A LOT, I didnt write if(Main.expertmode == false) so I did this for some reason, I added straight to vanilla treasure bags
+                    //Reference Rat Fiesta -> Codes -> Other
                 else
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Threat2"), 1, true, -1);
@@ -140,15 +139,13 @@ namespace RatFiesta.Modifications
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfTheDungeon"), 1, false, -1);
 
                     }
-                    // }
+              
                 }
             }
             if (npc.type == NPCID.Everscream)
             {
-
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+//Doooood. I just realized, it's easier to get this drop in normal mode and not expert... whoops, 
+  
                 if (Main.expertMode) {
                     if (Main.rand.Next(1, 11) == 2)
                     {
@@ -161,30 +158,25 @@ namespace RatFiesta.Modifications
                     {
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SnowdinScroll"), 1, true, -1);
                     }
-                    // }
+               
                 }
             }
-            //   if (npc.type == NPCID.)
-            //   if (npc.type == NPCID.)
+      
             if (npc.type == NPCID.CultistBoss)
             {
 
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+
               
                 
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PietyFrag"), 1, true, -1);
 
-                    // }
+              
                 
             }
             if (npc.type == NPCID.DukeFishron)
             {
 
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+         
 
                 if (Main.expertMode) { }
                 else
@@ -199,7 +191,7 @@ namespace RatFiesta.Modifications
 
                     }
                 }
-                // }
+            
 
             }
 
@@ -207,9 +199,7 @@ namespace RatFiesta.Modifications
             if (npc.type == NPCID.Golem)
             {
 
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+
 
                 if (Main.expertMode) { }
                 else
@@ -223,57 +213,40 @@ namespace RatFiesta.Modifications
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ODefense"), 1, true, -1);
                     }
                 }
-                // }
-
+      
             }
 
-            //  ----------------------------------------------------------------
-            if (npc.type == NPCID.MoonLordCore)
-            {
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
-                if (Main.expertMode) { }
-                else
-                {
-                    // }
-                }
-            }
-            //   if (npc.type == NPCID.)
+    
 
             //  ----------------------------------------------------------------
 
             if (npc.boss && Array.IndexOf(new int[] { NPCID.Spazmatism, NPCID.Retinazer, }, npc.type) > -1)
-
+//This is required for non expert worlds as you gotta kill both to get the loot - similar in eater of worlds.
             {
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+            
                 if (Main.expertMode) { }
                 else
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfSight"), 1, true, -1);
-                    // }
+              
                 }
             }
             if (npc.boss && Array.IndexOf(new int[] { NPCID.EaterofWorldsBody, NPCID.EaterofWorldsHead, NPCID.EaterofWorldsTail }, npc.type) > -1)
             {
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+               
                 if (Main.expertMode) { }
                 else
                 {
                     if (Main.rand.Next(1, 4) != 2)
                     {
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfTheCursed"), 1, true, -1);
-                        // }
+                   
                     }
                 }
             }
 
 
-            //   if (npc.type == NPCID.)
+
 
             //  ----------------------------------------------------------------
 
@@ -285,11 +258,9 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
+                  
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfMight"), 1, true, -1);
-                    // }
+                  
                 }
             }
             //  ----------------------------------------------------------------
@@ -299,11 +270,9 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
+                
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfFright"), 1, true, -1);
-                    // }
+
                 }
             }
             //  ----------------------------------------------------------------
@@ -312,11 +281,9 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
+                 
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Threat21"), 1, true, -1);
-                    // }
+            
                     if(Main.rand.Next(1,11) == 2)
                     {
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OFlash"), 1, true, -1);
@@ -333,9 +300,7 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
+                   
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Threat1"), 1, true, -1);
                     // }
                     if (Main.rand.Next(1, 4) != 2)
@@ -350,11 +315,7 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
-                  
-                    // }
+              
                     if (Main.rand.Next(1, 4) != 2)
                     {
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfTheCursed"), 1, false, -1);
@@ -367,11 +328,7 @@ namespace RatFiesta.Modifications
                 if (Main.expertMode) { }
                 else
                 {
-                    //    if ( Main.rand.Next(X) = (Y))
-                    //    if (Main.rand.Next(2) = (1))//item rarity
-                    // {
-
-                    // }
+                 
                     if (Main.rand.Next(1, 4) != 2)
                     {
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SigilOfTheJungle"), 1, false, -1);
@@ -381,31 +338,27 @@ namespace RatFiesta.Modifications
             }
             if (npc.type == NPCID.CultistBoss)
             {
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+            
                
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Threat4"), 1, false, -1);
-                    // }
+
                 
             }
             if (npc.type == NPCID.Plantera)
             {
-                //    if ( Main.rand.Next(X) = (Y))
-                //    if (Main.rand.Next(2) = (1))//item rarity
-                // {
+          
                 if (Main.expertMode) { }
                 else
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Threat3"), 1, false, -1);
-                    // }
+                
                 }
             }
 
             //  ----------------------------------------------------------------
 
 
-            //  Main.rand(1, 100)
+          
 
             if (npc.type == NPCID.WitchDoctor)
             {
@@ -413,7 +366,7 @@ namespace RatFiesta.Modifications
                 {
 
 
-                 
+                 //50% chance to drop either pygmy or hercules in expert
 
                     if (Main.rand.Next(1, 101) >= 50)
                     {
@@ -427,7 +380,7 @@ namespace RatFiesta.Modifications
                 else
                 {
                    
-
+              //  This is a 75% chance to even get the chance to drop anything
                     if (Main.rand.Next(1, 5) != 4)
                     {
                        
