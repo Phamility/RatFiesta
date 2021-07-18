@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
@@ -23,7 +23,6 @@ namespace RatFiesta.Items.Accessories
             item.accessory = true;
             item.value = Item.sellPrice(gold: 2);
             item.rare = ItemRarityID.Blue;
-
         }
 
         public override void SetStaticDefaults()
@@ -36,9 +35,7 @@ namespace RatFiesta.Items.Accessories
         {
             player.minionDamage -= .55f;
             player.maxMinions += 2;
+            //Pretty self explanatory.
         }
-       
-
     }
-
 }
