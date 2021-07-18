@@ -1,11 +1,26 @@
 # RatFiesta
 Welcome to the Rat Fiesta..!
 
-Made by Phamility
+Just a small-medium mod to add some spice made by Phamility
+
+Features:
+
+- 50 New Accessories
+- 7 New Weapons
+- 10 New Summons
+- 1 New Boss
+- 1 New Armor Set
+- 5 Mysterious Idols
+- 7 Vanilla Reworks
+- 15 Vanity Items
+
+Personally, I think this mod is directed towards those new to mods, as it doesn't add too much content, nor too little. Also I REALLY eyeballed all the stats I added to the game, so something may be broken .-.
 
 Probably my first and last mod, it was an experience, Ima just some of my code here just incase of, idk..
 
 You can use anything you want here, idrc, if you haven't already, I recommend joining the Tmodloader discord server, I ctrl+F'd a decent chunk of my code from over there.
+
+
 
 ||CODE||
 
