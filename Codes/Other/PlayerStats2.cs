@@ -1,4 +1,4 @@
-﻿using RatFiesta.Buffs;
+using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
 using Terraria;
@@ -27,14 +27,18 @@ namespace RatFiesta
         public override void ResetEffects()
         {
 
+//This is an example of one of my Mysterious idols permamnent buffs.
             player.statDefense += (Threat2Consumption * 12);
             if (Threat2Max == Threat2Consumption)
             {
                 Threat2Consumed = true;
                 player.AddBuff(ModContent.BuffType<Darkness>(), 2);
+                //This just forces the buff onto the player if they consumed any darkness
                 PlayerStats.Idolsconsumed += 1;
+                //This is to keep track of how many idols uve used.
             }
             else { Threat2Consumed = false; }
+            //this static bool helps decide what the Threat Analyzer should say.
 
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
@@ -51,7 +55,7 @@ namespace RatFiesta
                 {"Threat2Consumption", Threat2Consumption }
 
             };
-
+//To be honest, I just know this is necessary for permanenet upgrades like life crystals.
 
 
 
