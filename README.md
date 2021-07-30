@@ -5,7 +5,7 @@ Just a small-medium mod to add some spice made by Phamility
 
 Features:
 
-- 50 New Accessories
+- 51 New Accessories
 - 7 New Weapons
 - 10 New Summons
 - 1 New Boss
@@ -21,6 +21,12 @@ Probably my first and last mod, it was an experience, Ima just some of my code h
 You can use anything you want here, idrc, if you haven't already, I recommend joining the Tmodloader discord server, I ctrl+F'd a decent chunk of my code from over there.
 
 Shoutout to Mirsario, his Armor helper helped me make the 15 vanity and 1 armor set, I tried but gave up spriting the long way and oh lordy. THANK YOU Mirsario!
+
+Updates
+1.0 - Release
+1.1 - Icon added
+1.2 - Website Added
+1.2.1 - 1 New Accessory  
 
 
 
