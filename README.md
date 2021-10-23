@@ -4,15 +4,15 @@ Welcome to the Rat Fiesta..!
 Just a small-medium mod to add some spice made by Phamility
 
 Features:
-
-- 51 New Accessories
+- 55 New Accessories
 - 7 New Weapons
-- 10 New Summons
+- 13 New Summons
 - 1 New Boss
 - 1 New Armor Set
 - 5 Mysterious Idols
+- 3 Keystones
 - 7 Vanilla Reworks
-- 15 Vanity Items
+- 15 Vanity Clothing
 
 Personally, I think this mod is directed towards those new to mods, as it doesn't add too much content, nor too little. Also I REALLY eyeballed all the stats I added to the game, so something may be broken .-.
 
@@ -27,6 +27,7 @@ Updates
 1.1 - Icon added
 1.2 - Website Added
 1.2.1 - 1 New Accessory  
+1.3.1 - Added Keystones
 
 
 
