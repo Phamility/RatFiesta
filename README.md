@@ -57,9 +57,7 @@ Vanity Items:
 
 -----------------------------------------------------------
 
-Made by Phamility, @TheAgileIndie
-
-Personally, I think this mod is directed towards those new to mods, as it doesn't add too much content, nor too little. Also I REALLY eyeballed all the stats I added to the game, so something may be broken .-.
+Personally, I think this mod is directed towards those new to mods, as it doesn't add too much content, nor too little. Also I REALLY eyeballed all the stats I added to the game, so something may be broken .-. Speaking of broken - no clue how this mod works in multiplayer so... goodluck!
 
 Probably my first and last mod, it was an experience, Ima just some of my code here just incase of, idk..
 
