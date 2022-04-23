@@ -14,30 +14,30 @@ using System.Threading.Tasks;
 
 namespace RatFiesta.Items.Accessories
 {
-    class GooeyeContract : ModItem
+    class ZGolemsContract : ModItem
     {
         public override void SetDefaults()
         {
             item.width = 32;
             item.height = 32;
             item.accessory = true;
-            item.value = Item.sellPrice(gold: 2);
-            item.rare = ItemRarityID.Blue;
+            item.value = Item.sellPrice(gold: 10);
+            item.rare = ItemRarityID.Lime;
 
         }
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Slimeye's Contract");
-            Tooltip.SetDefault("Reduces summon damage by 55%. \nIncreases max amount of minions by 2.\nIt drives you a little insane...");
+            DisplayName.SetDefault("Golem's Contract");
+            Tooltip.SetDefault("Reduces summon damage by 60%. \nIncreases max amount of minions by 6.\nThis great army comes at a great cost!");
 
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.minionDamage -= .55f;
-            player.maxMinions += 2;
+            player.minionDamage -= .6f;
+            player.maxMinions += 6;
         }
-       
+
 
     }
 

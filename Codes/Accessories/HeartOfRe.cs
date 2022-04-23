@@ -1,10 +1,11 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
 using Terraria;
 using System.IO;
 using Terraria.DataStructures;
+
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
@@ -16,15 +17,18 @@ namespace RatFiesta.Items.Accessories
 {
     class HeartOfRe : ModItem
     {
+        
+
         public override void SetDefaults()
         {
+
+
             item.width = 32;
             item.height = 32;
             item.accessory = true;
             item.value = Item.sellPrice(gold: 3);
             item.rare = ItemRarityID.Expert;
             item.expert = true;
-            //The first of the last two lines makes the item rainbow color, the other makes it so it's color can't be changed through reforging.
 
         }
 
@@ -32,13 +36,10 @@ namespace RatFiesta.Items.Accessories
         {
             DisplayName.SetDefault("Heart Of Resilience");
             Tooltip.SetDefault("Provides 5 life regeneration, 3 defense, and 3% movement speed. \nThese stats are doubled when below 70% health, \ndoubled again when below 35% health, \nand doubled one more time when below 10% health.");
-            //Incase you didn't know, "\n" pushes the line in the tooltip down a line.
 
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-        //The lowest percentage of health, 10%, is putten first because it is fulfilled by less than 35% and 70%, so if it were to be put at the end,
-        //it would never go through, so always in a case like this, go from smallest to largest.
             if (player.statLife <= (player.statLifeMax2 * .1f))
             {
                 player.runAcceleration *= 1.24f;
@@ -69,5 +70,7 @@ namespace RatFiesta.Items.Accessories
             }
 
         }
+      
+
     }
 }

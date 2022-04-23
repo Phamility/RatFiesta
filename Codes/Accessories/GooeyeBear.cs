@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿
+using Microsoft.Xna.Framework;
 using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
@@ -11,34 +12,36 @@ using System.Linq;
 using Terraria.ModLoader.IO;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace RatFiesta.Items.Accessories
 {
-    class GooeyeContract : ModItem
+    class GooeyeBear : ModItem
     {
+
         public override void SetDefaults()
         {
             item.width = 32;
-            item.height = 32;
+            item.height = 34;
             item.accessory = true;
-            item.value = Item.sellPrice(gold: 2);
+            item.value = Item.sellPrice(gold: 3);
             item.rare = ItemRarityID.Blue;
 
         }
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Slimeye's Contract");
-            Tooltip.SetDefault("Reduces summon damage by 55%. \nIncreases max amount of minions by 2.\nIt drives you a little insane...");
+          
+            DisplayName.SetDefault("Slimeye's Teddy Bear");
+            Tooltip.SetDefault("Provides the Calming Buff, Builder Buff and 1 defense.\nSlimeye stole this teddy bear from a boy!");
 
         }
-        public override void UpdateAccessory(Player player, bool hideVisual)
+     
+
+
+        public override void UpdateAccessory(Player player, bool showVisual)
         {
-            player.minionDamage -= .55f;
-            player.maxMinions += 2;
+            player.statDefense += 1;
+            player.AddBuff(BuffID.Calm, 2);
+            player.AddBuff(BuffID.Builder, 2);
         }
-       
-
     }
-
 }

@@ -3,6 +3,7 @@ using RatFiesta.Buffs;
 using RatFiesta.Minions;
 using System;
 using Terraria;
+using RatFiesta.Items.Drops;
 using System.IO;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace RatFiesta.Items.Accessories
 {
-    class RockFloat : ModItem
+    class GooeyeShark : ModItem
     {
 
 
@@ -25,11 +26,11 @@ namespace RatFiesta.Items.Accessories
             item.width = 32;
             item.height = 32;
             item.accessory = true;
-            item.value = Item.sellPrice(platinum: 1);
-            item.rare = ItemRarityID.Orange;
+            item.value = Item.sellPrice(platinum: 2);
+            item.rare = ItemRarityID.Yellow;
             // item.summon = true;
-            item.UseSound = SoundID.Item113;
-            item.buffType = ModContent.BuffType<RockBuff>();
+
+            item.buffType = ModContent.BuffType<SharkBuff>();
             item.noMelee = true;
             item.noUseGraphic = true;
 
@@ -38,22 +39,18 @@ namespace RatFiesta.Items.Accessories
 
         public override void SetStaticDefaults()
         {
-        
+      
 
-            DisplayName.SetDefault("Mineral Manipulator");
-
-            Tooltip.SetDefault("Wearing this item summons 60 Rocks that fly around you and do 3 damage.\n" +
-                "Damage is increased to 4 in expert mode.\nDamage isn't affected by buffs.\n" +
-                "Deeeeefiniely not a good in single-target scenarios.");
+            DisplayName.SetDefault("Gooeye Shark Necklace");
+            Tooltip.SetDefault("Wearing this item summons a Gooeye Shark that does 225 damage to attack for you. \nDamage is increased to 350 in expert mode.\nDamage isn't affected by buffs.\nThe potential has been brought out!");
 
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.StoneBlock, 60);
-            recipe.AddRecipeGroup(mod.Name + ":Evil", 25);
-            recipe.AddIngredient(ItemID.GravitationPotion, 1);
-
+            recipe.AddIngredient(ModContent.ItemType<GooeyeNeck>());
+            recipe.AddIngredient(ModContent.ItemType<FishronFin>());
+            recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
@@ -65,7 +62,7 @@ namespace RatFiesta.Items.Accessories
 
 
 
-            bool HasBuff = player.HasBuff(ModContent.BuffType<RockBuff>());
+            bool HasBuff = player.HasBuff(ModContent.BuffType<SharkBuff>());
 
 
 

@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace RatFiesta.Items.Accessories
 {
-    class RockFloat : ModItem
+    class LunarFloat : ModItem
     {
 
 
@@ -25,11 +25,11 @@ namespace RatFiesta.Items.Accessories
             item.width = 32;
             item.height = 32;
             item.accessory = true;
-            item.value = Item.sellPrice(platinum: 1);
-            item.rare = ItemRarityID.Orange;
+            item.value = Item.sellPrice(platinum: 3);
+            item.rare = ItemRarityID.Red;
             // item.summon = true;
             item.UseSound = SoundID.Item113;
-            item.buffType = ModContent.BuffType<RockBuff>();
+            item.buffType = ModContent.BuffType<LunarBuff>();
             item.noMelee = true;
             item.noUseGraphic = true;
 
@@ -38,21 +38,24 @@ namespace RatFiesta.Items.Accessories
 
         public override void SetStaticDefaults()
         {
-        
 
-            DisplayName.SetDefault("Mineral Manipulator");
 
-            Tooltip.SetDefault("Wearing this item summons 60 Rocks that fly around you and do 3 damage.\n" +
-                "Damage is increased to 4 in expert mode.\nDamage isn't affected by buffs.\n" +
-                "Deeeeefiniely not a good in single-target scenarios.");
+            DisplayName.SetDefault("Celestial Mineral Manipulator");
+
+            Tooltip.SetDefault("Wearing this item summons 70 Lunar Rocks that fly around you and do 40 damage.\n" +
+                "Damage is increased to 51 in expert mode.\nDamage isn't affected by buffs.\n" +
+                "Ryoiki Tenkai.");
 
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.StoneBlock, 60);
-            recipe.AddRecipeGroup(mod.Name + ":Evil", 25);
-            recipe.AddIngredient(ItemID.GravitationPotion, 1);
+            recipe.AddIngredient(ModContent.ItemType<RockFloat>());
+        
+            recipe.AddIngredient(ItemID.FragmentStardust, 2);
+            recipe.AddIngredient(ItemID.FragmentSolar, 2);
+            recipe.AddIngredient(ItemID.FragmentVortex, 2);
+            recipe.AddIngredient(ItemID.FragmentNebula, 2);
 
             recipe.SetResult(this);
             recipe.AddRecipe();
@@ -65,7 +68,7 @@ namespace RatFiesta.Items.Accessories
 
 
 
-            bool HasBuff = player.HasBuff(ModContent.BuffType<RockBuff>());
+            bool HasBuff = player.HasBuff(ModContent.BuffType<LunarBuff>());
 
 
 

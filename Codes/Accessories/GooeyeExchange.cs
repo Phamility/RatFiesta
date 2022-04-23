@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RatFiesta.Items.Accessories
 {
-    class GooeyeContract : ModItem
+    class GooeyeExchange : ModItem
     {
         public override void SetDefaults()
         {
@@ -27,17 +27,17 @@ namespace RatFiesta.Items.Accessories
         }
 
         public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Slimeye's Contract");
-            Tooltip.SetDefault("Reduces summon damage by 55%. \nIncreases max amount of minions by 2.\nIt drives you a little insane...");
+        { 
+            DisplayName.SetDefault("Slimeye's Law of EquivalentExchange");
+            Tooltip.SetDefault("Reduces minion slots by 2. \nIncreases damage by 18%.\nFMA...FMA...");
 
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.minionDamage -= .55f;
-            player.maxMinions += 2;
+            player.allDamage += .18f;
+            player.maxMinions -= 2;
         }
-       
+
 
     }
 

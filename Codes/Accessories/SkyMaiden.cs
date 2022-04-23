@@ -14,30 +14,35 @@ using System.Threading.Tasks;
 
 namespace RatFiesta.Items.Accessories
 {
-    class GooeyeContract : ModItem
+    class SkyMaiden : ModItem
     {
         public override void SetDefaults()
         {
             item.width = 32;
             item.height = 32;
             item.accessory = true;
-            item.value = Item.sellPrice(gold: 2);
-            item.rare = ItemRarityID.Blue;
+            item.value = Item.sellPrice(gold: 5);
+            item.rare = ItemRarityID.Green;
 
         }
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Slimeye's Contract");
-            Tooltip.SetDefault("Reduces summon damage by 55%. \nIncreases max amount of minions by 2.\nIt drives you a little insane...");
+            DisplayName.SetDefault("Sky Maiden's Blessing");
+            Tooltip.SetDefault("Increase defense by 1\nReduce damage taken by 2%%\nIncreases damage by 3%\nIncrease movement speed by 4%\nThe sky's the limit! ");
 
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.minionDamage -= .55f;
-            player.maxMinions += 2;
+            player.statDefense += 1;
+            player.endurance += .02f;
+            player.allDamage += .03f;
+            player.runAcceleration *= 1.04f;
+            player.maxRunSpeed *= 1.04f;
+
+
         }
-       
+
 
     }
 
